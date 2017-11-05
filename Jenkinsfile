@@ -5,7 +5,8 @@
         * from https://github.com/hotwilson/jenkins2/edit/master/Jenkinsfile
         * by wilsonmar@gmail.com 
  */
- 
+
+import groovy.json.* 
 import hudson.model.*
 import hudson.EnvVars
 import groovy.json.JsonSlurperClassic
@@ -24,7 +25,7 @@ stage ('Stage 1'){
     echo "${env.BUILD_NUMBER}"
      def example = load './first.groovy'
      def nn = example.ngetItemData("MODULENAME2", "STAGE_ENV")
-     echo 'we ${nn'
+     echo 'we ${nn}'
  
 } //stage 1 
 
