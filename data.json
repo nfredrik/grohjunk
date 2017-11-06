@@ -1,20 +1,17 @@
 {
-    "MODULENAME": 
-    [
-         {
-              "STAGE_ENV": "itp3",
-             "TAGS": "@SportTotan",
-	     "mail": "nfredrik@gmail.com",
-         }
-    ],
+	"MODULENAME": [{
+		"STAGE_ENV": "itp3",
+		"TAGS": "@SportTotan",
+		"mail": "nfredrik@gmail.com"
+	}],
 
-    "MODULENAME2": 
-    
-         {
-              "STAGE_ENV": "itp3",
-             "TAGS": "@SportTotan",
-	     "mail": "olle@gmail.com",
-         }
-    
+	"MODULENAME2":
+
+	{
+		"STAGE_ENV": "itp3",
+		"TAGS": "@SportTotan",
+		"mail": "olle@gmail.com"
+	}
+
 
 }
