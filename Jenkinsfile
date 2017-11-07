@@ -17,7 +17,7 @@ import java.net.URL
  
 Map ngetItemData(String module, String item) {
     def jsonSlurper = new JsonSlurper()
-    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("data.json"),"UTF-8"))
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("${WORKSPACE}/data.json"),"UTF-8"))
     data = jsonSlurper.parse(reader)  
     
     //return data."$module" //."$item"
