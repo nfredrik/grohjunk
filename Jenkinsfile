@@ -44,7 +44,7 @@ stage ('Stage 2') {
 
 Map ngetItemData(String content, String module, String item) {
     def jsonSlurper = new JsonSlurper()
-    data = jsonSlurper.parse(content)  
+    data = jsonSlurper.parseText(content)  
     
     return data."$module"."$item"
 }
