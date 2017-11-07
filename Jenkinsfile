@@ -15,15 +15,6 @@ import groovy.json.JsonOutput
 import java.net.URL
 
  
-Map ngetItemData(String module, String item) {
-    def jsonSlurper = new JsonSlurper()
-    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("${WORKSPACE}/data.json"),"UTF-8"))
-    data = jsonSlurper.parse(reader)  
-    
-    //return data."$module" //."$item"
-}
-
-
 
 node {
     
@@ -35,8 +26,9 @@ stage ('Stage 1'){
   echo "BUILD_URL=${env.BUILD_NUMBER}"
 
     echo "${env.BUILD_NUMBER}"
-    def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
-     //echo 'we ${nn}'
+    #def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
+    def reader = readJSON file: "${WORKSPACE}/input.json"
+    echo 'we ${reader}'
  
 } //stage 1 
 
@@ -50,3 +42,11 @@ stage ('Stage 2') {
      }
 
 } // node
+
+Map ngetItemData(String module, String item) {
+    def jsonSlurper = new JsonSlurper()
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("${WORKSPACE}/data.json"),"UTF-8"))
+    data = jsonSlurper.parse(reader)  
+    
+    //return data."$module" //."$item"
+}
