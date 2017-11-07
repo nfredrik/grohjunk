@@ -26,7 +26,7 @@ stage ('Stage 1'){
   echo "BUILD_URL=${env.BUILD_NUMBER}"
 
     echo "${env.BUILD_NUMBER}"
-    #def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
+    //def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
     def reader = readJSON file: "${WORKSPACE}/input.json"
     echo 'we ${reader}'
  
