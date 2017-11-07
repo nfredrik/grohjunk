@@ -4,7 +4,7 @@
         * Sample Jenkinsfile for Jenkins2 Pipeline
         * from https://github.com/hotwilson/jenkins2/edit/master/Jenkinsfile
         * by wilsonmar@gmail.com 
-
+ */
 
 import groovy.json.* 
 import hudson.model.*
@@ -13,8 +13,8 @@ import groovy.json.JsonSlurperClassic
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
 import java.net.URL
- */
-import groovy.json.*  
+
+ 
  
 Map ngetItemData(String module, String item) {
     def jsonSlurper = new JsonSlurper()
