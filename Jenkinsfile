@@ -43,6 +43,8 @@ stage ('Stage 2') {
 } // node
 
 Map ngetItemData(String content, String module, String item) {
+
+    println "${content}"
     def jsonSlurper = new JsonSlurper()
     data = jsonSlurper.parseText(content)  
     
