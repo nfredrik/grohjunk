@@ -28,7 +28,6 @@ stage ('Stage 1'){
     echo "${env.BUILD_NUMBER}"
     def reader = readFile encoding: 'utf-8', file: "${WORKSPACE}/data.json"
     def nn = ngetItemData(reader, "MODULENAME2", "STAGE_ENV")
-    echo "${nn}"
 } //stage 1 
 
 stage ('Stage 2') { 
