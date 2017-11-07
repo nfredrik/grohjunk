@@ -26,10 +26,9 @@ stage ('Stage 1'){
   echo "BUILD_URL=${env.BUILD_NUMBER}"
 
     echo "${env.BUILD_NUMBER}"
-    //def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
     def reader = readFile encoding: 'utf-8', file: "${WORKSPACE}/data.json"
-    echo 'we ${reader}'
- 
+    def nn = ngetItemData(reader, "MODULENAME2", "STAGE_ENV")
+    echo "${nn}"
 } //stage 1 
 
 stage ('Stage 2') { 
@@ -43,10 +42,9 @@ stage ('Stage 2') {
 
 } // node
 
-Map ngetItemData(String module, String item) {
+Map ngetItemData(String content, String module, String item) {
     def jsonSlurper = new JsonSlurper()
-    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("${WORKSPACE}/data.json"),"UTF-8"))
-    data = jsonSlurper.parse(reader)  
+    data = jsonSlurper.parse(content)  
     
-    //return data."$module" //."$item"
+    return data."$module"."$item"
 }
