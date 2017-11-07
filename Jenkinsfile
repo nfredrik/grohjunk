@@ -14,13 +14,8 @@ import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
 import java.net.URL
  */
+import groovy.json.*  
  
- 
-
-node {
-    
-stage ('Stage 1'){
-
 Map ngetItemData(String module, String item) {
     def jsonSlurper = new JsonSlurper()
     def reader = new BufferedReader(new InputStreamReader(new FileInputStream("./data.json"),"UTF-8"))
@@ -28,6 +23,12 @@ Map ngetItemData(String module, String item) {
 
     return data."$module" //."$item"
 }
+ 
+
+node {
+    
+stage ('Stage 1'){
+
 
 
   echo "BUILD_URL"    
