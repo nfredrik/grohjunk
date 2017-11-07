@@ -5,7 +5,7 @@
         * from https://github.com/hotwilson/jenkins2/edit/master/Jenkinsfile
         * by wilsonmar@gmail.com 
 
-
+ */
 import groovy.json.* 
 import hudson.model.*
 import hudson.EnvVars
@@ -13,7 +13,7 @@ import groovy.json.JsonSlurperClassic
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
 import java.net.URL
- */
+
  
 Map ngetItemData(String module, String item) {
     def jsonSlurper = new JsonSlurper()
@@ -35,7 +35,7 @@ stage ('Stage 1'){
   echo "BUILD_URL=${env.BUILD_NUMBER}"
 
     echo "${env.BUILD_NUMBER}"
-    def nn = example.ngetItemData("MODULENAME2", "STAGE_ENV")
+    def nn = ngetItemData("MODULENAME2", "STAGE_ENV")
      //echo 'we ${nn}'
  
 } //stage 1 
